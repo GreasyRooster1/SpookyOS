@@ -9,13 +9,12 @@ namespace SpookyOS
     public class Command
     {
         public string identifier;
-        public Boolean canHaveArgs;
 
-        public void Run(string[] args)
+        public virtual void Run(Kernel k,string[] args)
         {
 
         }
-        public void Run()
+        public virtual void Run(Kernel k)
         {
 
         }

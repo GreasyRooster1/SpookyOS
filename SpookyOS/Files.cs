@@ -10,11 +10,11 @@ namespace SpookyOS
 {
     internal class Files
     {
-        public static CosmosVFS fs;
+        public static CosmosVFS fs = new CosmosVFS();
         public static void setupFileSystem()
         {
-            fs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+            Console.WriteLine("Sucussfuly initalized CosmosVFS");
         }
     }
 }
