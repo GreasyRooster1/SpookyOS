@@ -13,11 +13,12 @@ namespace SpookyOS.Commands
         public EchoCommand()
         {
             identifier = "echo";
+            description = "echoes something to the terminal";
+            usage = "echo [ARGS]";
         }
         public override void Run(Kernel k, string[] args)
         {
-            k.mDebugger.Send("sdfdsf");
-            Console.WriteLine(string.Join(" ", args));
+            Console.WriteLine(string.Join(" ", args)[1..]);
         }
     }
 }

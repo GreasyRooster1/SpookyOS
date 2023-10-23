@@ -9,6 +9,8 @@ namespace SpookyOS
     public class Command
     {
         public string identifier;
+        public string description;
+        public string usage;
 
         public virtual void Run(Kernel k,string[] args)
         {

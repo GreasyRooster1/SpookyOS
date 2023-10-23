@@ -16,6 +16,7 @@ namespace SpookyOS
         {
             Files.setupFileSystem();
             registerCommands();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("SpookyOS has booted up!");
             Cosmos.HAL.Global.PIT.Wait(1000);
             Console.Clear();
@@ -29,6 +30,12 @@ namespace SpookyOS
         {
             commands[0]=(new EchoCommand());
             commands[1]=(new AvfsCommand());
+            commands[2] = (new HelpCommand());
+            commands[3] = (new LsCommand());
+            commands[4] = (new ShutdownCommand());
+            commands[5] = (new MkdirCommand());
+            commands[6] = (new CdCommand());
+            commands[7] = (new CatCommand());
             mDebugger.Send(commands.ToString());
         } 
 
@@ -38,7 +45,7 @@ namespace SpookyOS
         }
         protected void commandLine()
         {
-            Console.Write("/> $");
+            Console.Write(Files.pointer+"> $");
             string input = Console.ReadLine();
             //if(input.Split('$').Length > 2)
             // {
@@ -55,10 +62,6 @@ namespace SpookyOS
             {
                 mDebugger.Send("with args");
                 string[] args = new string[cmd.Split(new char[0]).Length];
-                for(int i = 0; i < args.Length; i++)
-                {
-                    args[i] = args[i].Replace(" ", "");
-                }
                 Array.Copy(cmd.Split(new char[0]), 1, args, 1, cmd.Split(new char[0]).Length - 1);
                 findCommandWithArgs(identifier, args);
             }
