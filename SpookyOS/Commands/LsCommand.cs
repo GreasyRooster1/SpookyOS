@@ -17,6 +17,7 @@ namespace SpookyOS.Commands
         }
         public override void Run(Kernel k, string[] args)
         {
+
             var files_list = Directory.GetFiles(Files.pointer);
             int i = 1;
             Console.ForegroundColor = ConsoleColor.Yellow;

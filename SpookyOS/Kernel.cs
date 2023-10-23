@@ -36,6 +36,9 @@ namespace SpookyOS
             commands[5] = (new MkdirCommand());
             commands[6] = (new CdCommand());
             commands[7] = (new CatCommand());
+            commands[8] = (new CrfCommand());
+            commands[9] = (new DelCommand());
+            commands[10] = (new MoveCommand());
             mDebugger.Send(commands.ToString());
         } 
 
@@ -45,7 +48,9 @@ namespace SpookyOS
         }
         protected void commandLine()
         {
+            Console.ForegroundColor= ConsoleColor.Yellow;
             Console.Write(Files.pointer+"> $");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             string input = Console.ReadLine();
             //if(input.Split('$').Length > 2)
             // {
@@ -79,7 +84,13 @@ namespace SpookyOS
                 {
                     if (c.identifier == cmd)
                     {
-                        c.Run(this, args);
+                        try
+                        {
+                            c.Run(this, args);
+                        }catch (Exception e)
+                        {
+                            Console.WriteLine(e.ToString());
+                        }
                         return;
                     }
                 }
