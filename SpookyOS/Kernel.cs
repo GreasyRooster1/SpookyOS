@@ -15,6 +15,7 @@ namespace SpookyOS
         protected override void BeforeRun()
         {
             Files.setupFileSystem();
+            //OSAudio.Setup();
             registerCommands();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("SpookyOS has booted up!");
@@ -39,6 +40,8 @@ namespace SpookyOS
             commands[8] = (new CrfCommand());
             commands[9] = (new DelCommand());
             commands[10] = (new MoveCommand());
+            commands[11] = (new ClearCommand());
+            commands[12] = (new SpookCommand());
             mDebugger.Send(commands.ToString());
         } 
 
