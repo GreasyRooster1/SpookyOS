@@ -53,6 +53,17 @@ namespace SpookyOS.Commands
                     }
                     Console.WriteLine();
                 }
+                else
+                {
+                    foreach (Command c in k.commands)
+                    {
+                        if (c.identifier == args[0])
+                        {
+                            Console.WriteLine(c.identifier + " - usage: " + c.usage + ", description: " + c.description);
+                        }
+                    }
+                    Console.WriteLine();
+                }
             }
         }
     }
