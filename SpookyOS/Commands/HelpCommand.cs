@@ -14,11 +14,11 @@ namespace SpookyOS.Commands
         {
             identifier = "help";
             description = "displays the help menu";
-            usage = "help [(command),-all]";
+            usage = "help [-all]";
         }
         public override void Run(Kernel k, string[] args)
         {
-            Console.WriteLine("use help (command) to see specific info about a command or help -all for all help");
+            Console.WriteLine("use help -all for all help");
             if (args == null)
             {
                 int i = 1;
@@ -52,7 +52,7 @@ namespace SpookyOS.Commands
                         }
                     }
                     Console.WriteLine();
-                }
+                }/*
                 else
                 {
                     foreach (Command c in k.commands)
@@ -63,7 +63,7 @@ namespace SpookyOS.Commands
                         }
                     }
                     Console.WriteLine();
-                }
+                }*/
             }
         }
     }
