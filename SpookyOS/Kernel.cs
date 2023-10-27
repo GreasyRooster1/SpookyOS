@@ -23,7 +23,8 @@ namespace SpookyOS
             Console.WriteLine("----SpookyOS V1.0----");
             Console.WriteLine("SpookyOs by Dillon Wilson");
             Console.WriteLine("made with COSMOS");
-            
+            Console.WriteLine("Selected Pumpkin_basic1 as theme");
+
         }
 
         protected void registerCommands()

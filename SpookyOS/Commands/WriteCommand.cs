@@ -12,16 +12,16 @@ namespace SpookyOS.Commands
         public WriteCommand()
         {
             identifier = "write";
-            description = "write to a file, {path} must be the full path,  \\n is a return";
+            description = "write to a file, {path} must be the full path";
             usage = "write {path} {content}";
         }
         public override void Run(Kernel k, string[] args)
         {
             //Im so sorry about this too
-            //Console.WriteLine("V.1.1? please?");
+            Console.WriteLine("V.1.1? please?");
             try
             {
-                File.WriteAllText(args[0], string.Join(" ", args[1..]).Replace("\\n","\n"));
+                //File.WriteAllText(args[0], string.Join(" ", args));
                 //File.WriteAllText(Files.getPath(args[0]), string.Join(" ", args[1..]));
             }
             catch (Exception e)
