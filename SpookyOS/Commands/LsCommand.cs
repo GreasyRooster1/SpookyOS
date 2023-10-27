@@ -38,7 +38,12 @@ namespace SpookyOS.Commands
             var dir_list = Directory.GetDirectories(Files.pointer);
             foreach (var f in dir_list)
             {
-                
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+                if (f.EndsWith(".spookycls"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                }
                 Console.Write(f);
                 if (i % 3 == 0)
                 {

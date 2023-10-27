@@ -18,6 +18,7 @@ namespace SpookyOS
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Press enter to confirm that you ARE NOT running SpookyOs on a real machine\npressing enter will confirm VFS initialization\nTHIS IS VERY LIKELY TO PERMANTLY MESS UP REAL HARD DRIVES\nwould you like to continue? ");
             string cont = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Sucussfuly initalized CosmosVFS");
         }
         public static string getPath(string inp) {

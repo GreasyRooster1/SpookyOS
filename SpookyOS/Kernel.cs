@@ -41,6 +41,9 @@ namespace SpookyOS
             commands[10] = (new MoveCommand());
             commands[11] = (new ClearCommand());
             commands[12] = (new SpookCommand());
+            commands[13] = (new WriteCommand());
+            commands[14] = (new ExecCommand());
+            commands[15] = (new ColorCommand());
             mDebugger.Send(commands.ToString());
         } 
 
@@ -61,7 +64,7 @@ namespace SpookyOS
             runCommand(input.Substring(input.LastIndexOf('$') + 1));
 
         }
-        protected void runCommand(string cmd)
+        public void runCommand(string cmd)
         {
             string identifier = cmd.Split(new char[0])[0];
             mDebugger.Send(identifier);
