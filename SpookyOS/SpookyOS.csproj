@@ -20,9 +20,25 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="OSAudio.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="jumpscare.wav" />
+      <None Remove="jumpscare1.wav" />
+      <None Remove="jumpscare2.wav" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="jumpscare.wav" />
+      <EmbeddedResource Include="jumpscare1.wav" />
+      <EmbeddedResource Include="jumpscare2.wav" />
     </ItemGroup>
 
 </Project>
