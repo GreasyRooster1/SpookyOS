@@ -88,7 +88,7 @@ namespace SpookyOS
                     {
                         try
                         {
-                            c.Run(this, args);
+                            c.Start(this, args);
                         }catch (Exception e)
                         {
                             Console.WriteLine(e.ToString());

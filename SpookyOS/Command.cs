@@ -16,6 +16,14 @@ namespace SpookyOS
         {
 
         }
+        public virtual void Start(Kernel k, string[] args)
+        {
+            Run(k, args);
+            if(new Random().Next(20) == 0)
+            {
+                Spooks.MainSpooks.basicSpook();
+            }
+        }
         public virtual void Run(Kernel k)
         {
 
